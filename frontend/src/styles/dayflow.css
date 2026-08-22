@@ -1,0 +1,1128 @@
+/* =========================================================
+   DAYFLOW HRMS - GLOBAL DESIGN
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background: #f5f7fb;
+  color: #101828;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.dayflow-page {
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+.dayflow-content {
+  margin-left: 280px;
+  min-height: 100vh;
+  padding: 38px 42px;
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.dayflow-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 280px;
+  height: 100vh;
+
+  padding: 30px 22px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #0b1220 0%,
+      #10182b 100%
+    );
+
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  z-index: 100;
+}
+
+/* LOGO */
+
+.dayflow-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  padding: 4px 10px 32px;
+
+  border-bottom: 1px solid
+    rgba(255,255,255,0.08);
+}
+
+.dayflow-logo {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #315df5,
+      #673de7
+    );
+
+  color: white;
+
+  font-size: 22px;
+  font-weight: 800;
+
+  box-shadow:
+    0 8px 22px rgba(79,70,229,0.35);
+}
+
+.dayflow-brand-name {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.dayflow-brand-subtitle {
+  margin-top: 3px;
+
+  color: #8b98ad;
+
+  font-size: 12px;
+}
+
+/* NAV TITLE */
+
+.dayflow-nav-title {
+  margin: 28px 12px 12px;
+
+  color: #65738a;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+/* NAV */
+
+.dayflow-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.dayflow-nav-button {
+  width: 100%;
+
+  padding: 13px 15px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: transparent;
+
+  color: #aeb9ca;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-align: left;
+
+  transition:
+    background 0.2s,
+    color 0.2s,
+    transform 0.2s;
+}
+
+.dayflow-nav-button:hover {
+  background: rgba(255,255,255,0.06);
+  color: white;
+
+  transform: translateX(2px);
+}
+
+.dayflow-nav-button.active {
+  background:
+    linear-gradient(
+      135deg,
+      #4058ee,
+      #6139e6
+    );
+
+  color: white;
+
+  box-shadow:
+    0 8px 20px rgba(79,70,229,0.25);
+}
+
+.dayflow-nav-icon {
+  width: 22px;
+
+  text-align: center;
+
+  font-size: 17px;
+}
+
+.dayflow-badge {
+  margin-left: auto;
+
+  min-width: 21px;
+  height: 21px;
+
+  padding: 0 6px;
+
+  border-radius: 20px;
+
+  background: #ef4444;
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* LOGOUT */
+
+.dayflow-logout {
+  width: 100%;
+
+  padding: 13px 15px;
+
+  border: 1px solid
+    rgba(239,68,68,0.15);
+
+  border-radius: 12px;
+
+  background:
+    rgba(239,68,68,0.08);
+
+  color: #ff9b9b;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition: 0.2s;
+}
+
+.dayflow-logout:hover {
+  background:
+    rgba(239,68,68,0.15);
+
+  color: #ffb0b0;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.dayflow-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 30px;
+}
+
+.dayflow-eyebrow {
+  margin: 0 0 8px;
+
+  color: #5b4be7;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.dayflow-title {
+  margin: 0;
+
+  color: #101828;
+
+  font-size: 38px;
+  line-height: 1.1;
+
+  letter-spacing: -1.2px;
+}
+
+.dayflow-subtitle {
+  margin: 9px 0 0;
+
+  color: #667085;
+
+  font-size: 15px;
+}
+
+/* HEADER PROFILE */
+
+.dayflow-profile {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 10px 15px;
+
+  background: white;
+
+  border: 1px solid #eaecf0;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 3px 15px rgba(16,24,40,0.04);
+}
+
+.dayflow-profile-avatar {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eee9ff;
+
+  color: #6246e8;
+
+  font-weight: 800;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.dayflow-primary {
+  border: none;
+
+  padding: 12px 18px;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4f46e5,
+      #673de7
+    );
+
+  color: white;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  box-shadow:
+    0 8px 18px rgba(79,70,229,0.2);
+
+  transition: 0.2s;
+}
+
+.dayflow-primary:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 11px 24px rgba(79,70,229,0.28);
+}
+
+.dayflow-secondary {
+  padding: 11px 17px;
+
+  border: 1px solid #d0d5dd;
+
+  border-radius: 11px;
+
+  background: white;
+
+  color: #344054;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   STAT CARDS
+========================================================= */
+
+.dayflow-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-bottom: 26px;
+}
+
+.dayflow-stat-card {
+  min-height: 125px;
+
+  padding: 22px;
+
+  background: white;
+
+  border: 1px solid #eaecf0;
+
+  border-radius: 17px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 17px;
+
+  box-shadow:
+    0 6px 20px rgba(16,24,40,0.045);
+
+  transition: 0.2s;
+}
+
+.dayflow-stat-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 30px rgba(16,24,40,0.08);
+}
+
+.dayflow-stat-icon {
+  width: 55px;
+  height: 55px;
+
+  border-radius: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 23px;
+
+  flex-shrink: 0;
+}
+
+.stat-purple {
+  background: #eee9ff;
+  color: #6747e8;
+}
+
+.stat-blue {
+  background: #e5efff;
+  color: #2563eb;
+}
+
+.stat-green {
+  background: #dcfae6;
+  color: #079455;
+}
+
+.stat-yellow {
+  background: #fff3c4;
+  color: #b54708;
+}
+
+.stat-red {
+  background: #fee4e2;
+  color: #d92d20;
+}
+
+.dayflow-stat-label {
+  margin: 0 0 5px;
+
+  color: #667085;
+
+  font-size: 13px;
+}
+
+.dayflow-stat-value {
+  margin: 0;
+
+  color: #101828;
+
+  font-size: 27px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   CARDS / SECTIONS
+========================================================= */
+
+.dayflow-card {
+  margin-bottom: 24px;
+
+  background: white;
+
+  border: 1px solid #eaecf0;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 5px 20px rgba(16,24,40,0.04);
+
+  overflow: hidden;
+}
+
+.dayflow-card-header {
+  padding: 23px 25px;
+
+  border-bottom: 1px solid #eef0f3;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dayflow-card-title {
+  margin: 0;
+
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.dayflow-card-subtitle {
+  margin: 5px 0 0;
+
+  color: #98a2b3;
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   SEARCH BAR
+========================================================= */
+
+.dayflow-toolbar {
+  display: flex;
+
+  gap: 12px;
+
+  padding: 17px 20px;
+
+  background: white;
+
+  border: 1px solid #eaecf0;
+
+  border-radius: 15px;
+
+  margin-bottom: 22px;
+}
+
+.dayflow-search {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 13px 15px;
+
+  border: 1px solid #d0d5dd;
+
+  border-radius: 11px;
+
+  outline: none;
+
+  color: #101828;
+
+  font-size: 14px;
+
+  transition: 0.2s;
+}
+
+.dayflow-search:focus {
+  border-color: #6957e8;
+
+  box-shadow:
+    0 0 0 3px rgba(105,87,232,0.1);
+}
+
+.dayflow-select {
+  padding: 12px 15px;
+
+  border: 1px solid #d0d5dd;
+
+  border-radius: 11px;
+
+  background: white;
+
+  color: #344054;
+
+  outline: none;
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.dayflow-table-wrapper {
+  overflow-x: auto;
+}
+
+.dayflow-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 800px;
+}
+
+.dayflow-table th {
+  padding: 14px 20px;
+
+  background: #f9fafb;
+
+  border-bottom: 1px solid #eaecf0;
+
+  color: #667085;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-align: left;
+}
+
+.dayflow-table td {
+  padding: 17px 20px;
+
+  border-bottom: 1px solid #f2f4f7;
+
+  color: #344054;
+
+  font-size: 13px;
+}
+
+.dayflow-table tr:hover td {
+  background: #fafaff;
+}
+
+.dayflow-employee {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+}
+
+.dayflow-avatar {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6047e8,
+      #7941e8
+    );
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  flex-shrink: 0;
+}
+
+.dayflow-employee-name {
+  font-weight: 700;
+
+  color: #101828;
+}
+
+.dayflow-employee-id {
+  margin-top: 3px;
+
+  color: #98a2b3;
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.dayflow-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 6px 11px;
+
+  border-radius: 30px;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.dayflow-status.present,
+.dayflow-status.approved {
+  background: #dcfae6;
+  color: #027a48;
+}
+
+.dayflow-status.absent,
+.dayflow-status.rejected {
+  background: #fee4e2;
+  color: #b42318;
+}
+
+.dayflow-status.pending {
+  background: #fff4cc;
+  color: #b54708;
+}
+
+.dayflow-status.leave {
+  background: #fff4cc;
+  color: #b54708;
+}
+
+.dayflow-status.not-marked {
+  background: #f2f4f7;
+  color: #667085;
+}
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.dayflow-empty {
+  min-height: 280px;
+
+  padding: 50px 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.dayflow-empty-icon {
+  width: 65px;
+  height: 65px;
+
+  border-radius: 20px;
+
+  background: #f0ecff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 28px;
+
+  margin-bottom: 16px;
+}
+
+.dayflow-empty h3 {
+  margin: 0 0 7px;
+
+  font-size: 18px;
+}
+
+.dayflow-empty p {
+  margin: 0;
+
+  color: #98a2b3;
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.dayflow-action-group {
+  display: flex;
+
+  gap: 7px;
+}
+
+.dayflow-action {
+  border: none;
+
+  padding: 8px 11px;
+
+  border-radius: 8px;
+
+  color: white;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.dayflow-action.approve {
+  background: #12b76a;
+}
+
+.dayflow-action.reject {
+  background: #f04438;
+}
+
+.dayflow-action.view {
+  background: #4f46e5;
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.hr-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background:
+    rgba(15,23,42,0.55);
+
+  backdrop-filter: blur(5px);
+
+  animation: modalFade 0.18s ease;
+}
+
+.hr-modal {
+  width: 100%;
+
+  max-width: 470px;
+
+  background: white;
+
+  border-radius: 22px;
+
+  padding: 30px;
+
+  box-shadow:
+    0 25px 70px rgba(15,23,42,0.25);
+
+  animation: modalSlide 0.22s ease;
+}
+
+.hr-modal-icon {
+  width: 54px;
+  height: 54px;
+
+  border-radius: 16px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 27px;
+  font-weight: 800;
+
+  margin-bottom: 18px;
+}
+
+.hr-modal-icon.success {
+  background: #dcfae6;
+  color: #079455;
+}
+
+.hr-modal-icon.error {
+  background: #fee4e2;
+  color: #d92d20;
+}
+
+.hr-modal-icon.warning {
+  background: #fff3c4;
+  color: #b54708;
+}
+
+.hr-modal-icon.info {
+  background: #e5efff;
+  color: #2563eb;
+}
+
+.hr-modal-icon.delete {
+  background: #fee4e2;
+  color: #d92d20;
+}
+
+.hr-modal-content h2 {
+  margin: 0;
+
+  color: #101828;
+
+  font-size: 21px;
+}
+
+.hr-modal-content p {
+  margin: 9px 0 0;
+
+  color: #667085;
+
+  line-height: 1.6;
+
+  font-size: 14px;
+}
+
+.hr-modal-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-top: 27px;
+}
+
+.hr-modal-cancel,
+.hr-modal-confirm {
+  padding: 11px 17px;
+
+  border-radius: 10px;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.hr-modal-cancel {
+  border: 1px solid #d0d5dd;
+
+  background: white;
+
+  color: #344054;
+}
+
+.hr-modal-confirm {
+  border: none;
+
+  background: #5542e8;
+
+  color: white;
+}
+
+.hr-modal-confirm.success {
+  background: #12b76a;
+}
+
+.hr-modal-confirm.error,
+.hr-modal-confirm.delete {
+  background: #f04438;
+}
+
+.hr-modal-confirm.warning {
+  background: #f79009;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.dayflow-form {
+  display: grid;
+
+  gap: 16px;
+
+  margin-top: 20px;
+}
+
+.dayflow-form-group {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.dayflow-form-label {
+  color: #344054;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.dayflow-form-input,
+.dayflow-form-select,
+.dayflow-form-textarea {
+  width: 100%;
+
+  padding: 12px 13px;
+
+  border: 1px solid #d0d5dd;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  color: #101828;
+
+  background: white;
+
+  font-size: 14px;
+}
+
+.dayflow-form-textarea {
+  min-height: 90px;
+
+  resize: vertical;
+}
+
+.dayflow-form-input:focus,
+.dayflow-form-select:focus,
+.dayflow-form-textarea:focus {
+  border-color: #6246e8;
+
+  box-shadow:
+    0 0 0 3px rgba(98,70,232,0.1);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .dayflow-sidebar {
+    width: 230px;
+  }
+
+  .dayflow-content {
+    margin-left: 230px;
+
+    padding: 30px;
+  }
+
+  .dayflow-stats {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+
+  .dayflow-sidebar {
+    position: relative;
+
+    width: 100%;
+    height: auto;
+  }
+
+  .dayflow-content {
+    margin-left: 0;
+
+    padding: 22px 16px;
+  }
+
+  .dayflow-header {
+    flex-direction: column;
+
+    gap: 18px;
+  }
+
+  .dayflow-title {
+    font-size: 30px;
+  }
+
+  .dayflow-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .dayflow-toolbar {
+    flex-direction: column;
+  }
+
+  .dayflow-table {
+    min-width: 750px;
+  }
+}
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes modalFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalSlide {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(15px)
+      scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
