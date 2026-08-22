@@ -6,6 +6,9 @@ import {
   Navigate,
 } from "react-router-dom";
 
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+
 import Layout from "./components/Layout";
 
 import Dashboard from "./pages/Dashboard";
@@ -17,10 +20,27 @@ import Payroll from "./pages/Payroll";
 function App() {
   return (
     <BrowserRouter>
-
       <Routes>
 
-        {/* All modules share the same sidebar */}
+        {/* =========================
+            AUTHENTICATION PAGES
+        ========================= */}
+
+        <Route
+          path="/login"
+          element={<Login />}
+        />
+
+        <Route
+          path="/register"
+          element={<Register />}
+        />
+
+        {/* =========================
+            HR MODULES
+            All modules use Layout
+            and the same left sidebar
+        ========================= */}
 
         <Route element={<Layout />}>
 
@@ -51,30 +71,35 @@ function App() {
 
         </Route>
 
-        {/* Default */}
+        {/* =========================
+            DEFAULT PAGE
+        ========================= */}
 
         <Route
           path="/"
           element={
             <Navigate
-              to="/hr-dashboard"
+              to="/login"
               replace
             />
           }
         />
 
+        {/* =========================
+            INVALID URL
+        ========================= */}
+
         <Route
           path="*"
           element={
             <Navigate
-              to="/hr-dashboard"
+              to="/login"
               replace
             />
           }
         />
 
       </Routes>
-
     </BrowserRouter>
   );
 }
